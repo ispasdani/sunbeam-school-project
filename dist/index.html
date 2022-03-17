@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>SunBeam Car</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-container">
+        <img src="./assets/logo.png" alt="company-logo" class="company-logo" />
+        <h2>SunBeam Cars.</h2>
+      </div>
+
+      <div class="profile-container">
+        <p class="about-us"><a href="./aboutUsPage/about.html">About Us</a></p>
+        <img
+          src="./assets/profileIcon.png"
+          alt="profile-icon"
+          class="profile-icon"
+        />
+        <h2>Login</h2>
+      </div>
+    </nav>
+
+    <section class="herobox">
+      <div class="side-content">
+        <div class="form-container scale-in-center">
+          <h2 class="form-title">Rent your dream car...</h2>
+          <form class="form" id="form">
+            <div class="cols-container">
+              <div class="first-col">
+                <label for="date-start">Pick up date:</label>
+                <input type="date" id="date-start" name="date-start" />
+                <label for="num-of-persons">Number of persons:</label>
+                <input
+                  type="number"
+                  id="num-of-persons"
+                  name="num-of-persons"
+                  placeholder="Number of persons..."
+                  required
+                />
+              </div>
+              <div class="second-col">
+                <label for="date-end">Hand in date:</label>
+                <input type="date" id="date-end" name="date-end" required />
+                <label for="num-of-suitcases">Number of suitcases:</label>
+                <select name="num-of-suitcases" id="car-suitcases">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="More">More</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="search-btn" id="search-btn">
+              <a>SEARCH</a>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="right-side scale-in-center">
+        <div class="modal" id="modal">
+          <div class="modal-content" id="modal-content">
+            <div class="wrapper">
+              <p><span>"left click"</span> to rotate</p>
+              <p><span>"scroll wheel"</span> to zoom in and out</p>
+              <p><span>"right click"</span> to drag around</p>
+            </div>
+            <span class="close-btn" id="close-btn">&times</span>
+          </div>
+          <button class="info-btn">
+            <img id="info-btn" src="./assets/info.svg" />
+          </button>
+        </div>
+        <div class="canvas">
+          <div class="model"></div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="cars scale-in-center"></section>
+
+      <template class="car-output">
+        <div class="first-car" id="car-box">
+          <img class="car-one-logo" id="car-logo" alt="car-image" />
+          <p class="car-name" id="car-name"></p>
+          <div>
+            <p id="car-category"></p>
+            <p id="car-persons"></p>
+            <p id="car-suitcases"></p>
+          </div>
+          <div>
+            <p id="car-price"></p>
+            <button class="book-car-btn" id="car-book-btn">
+              <a href="./accessoriesPage/accessories.html">Book Now</a>
+            </button>
+          </div>
+        </div>
+      </template>
+    </main>
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="GLTFLoader.js"></script>
+    <script type="module" src="OrbitControls.js"></script>
+  </body>
+</html>
